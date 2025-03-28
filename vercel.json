@@ -3,7 +3,13 @@
     "builds": [
         {
             "src": "/api/index.php",
-            "use": "vercel-php@0.3.5"
+            "use": "vercel-php@0.6.0",
+            "config": {
+                "includeFiles": [
+                    "/usr/lib64/libssl.so.10",
+                    "/usr/lib64/libcrypto.so.10"
+                ]
+            }
         },
         {
             "src": "public/**",
