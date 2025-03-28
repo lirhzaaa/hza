@@ -3,11 +3,11 @@
     "builds": [
         {
             "src": "/api/index.php",
-            "use": "vercel-php@0.3.5"
+            "use": "vercel-php@0.1.0"
         },
         {
             "src": "public/**",
-            "use": "@vercel/static"
+            "use": "@vercel/static-build"
         }
     ],
     "routes": [
@@ -36,6 +36,6 @@
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_ROUTES_CACHE": "/tmp/routes.php"
     },
-    "buildCommand": "composer install --prefer-dist --optimize-autoloader --no-dev && npm install && npm run build",
+    "buildCommand": "composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev",
     "outputDirectory": "public"
 }
