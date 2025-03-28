@@ -3,10 +3,12 @@
     "builds": [
         {
             "src": "api/index.php",
-            "use": "vercel-php@0.4.0",
+            "use": "vercel-php@0.3.1",
             "config": {
                 "maxLambdaSize": "15mb",
-                "runtime": "php7.4"
+                "runtime": "php7.2",
+                "composer": true,
+                "composerFlags": ["--ignore-platform-reqs"]
             }
         },
         {

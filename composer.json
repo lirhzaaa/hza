@@ -3,8 +3,8 @@
     "name": "laravel/laravel",
     "type": "project",
     "require": {
-        "php": "^7.4",
-        "laravel/framework": "^10.10"
+        "php": "^7.2.5",
+        "laravel/framework": "^8.0"
     },
     "scripts": {
         "post-autoload-dump": [
@@ -16,9 +16,12 @@
         "optimize-autoloader": true,
         "preferred-install": "dist",
         "platform": {
-            "php": "7.4.0"
+            "php": "7.2.5"
         },
-        "platform-check": false
+        "platform-check": false,
+        "allow-plugins": {
+            "composer/package-versions-deprecated": true
+        }
     },
     "minimum-stability": "stable",
     "prefer-stable": true
