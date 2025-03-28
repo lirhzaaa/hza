@@ -1,0 +1,46 @@
+{
+    "version": 2,
+    "functions": {
+        "api/*.php": {
+            "runtime": "vercel-php@0.4.0"
+        }
+    },
+    "builds": [
+        {
+            "src": "/api/index.php",
+            "use": "vercel-php@0.4.0"
+        },
+        {
+            "src": "public/**",
+            "use": "@vercel/static"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(css|js|images|fonts|assets)/(.*)",
+            "dest": "/public/$1/$2"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/api/index.php"
+        }
+    ],
+    "env": {
+        "APP_NAME": "Laravel",
+        "APP_ENV": "production",
+        "APP_DEBUG": "false",
+        "APP_URL": "https://lirhza.vercel.app",
+        "APP_KEY": "base64:tqvA5dxhNrhOnqipDtl4+7szGYiI0aqe9TL2079eago=",
+        "CACHE_DRIVER": "array",
+        "LOG_CHANNEL": "stderr",
+        "SESSION_DRIVER": "array",
+        "VIEW_COMPILED_PATH": "/tmp/views",
+        "CACHE_DIRECTORY": "/tmp/cache",
+        "APP_SERVICES_CACHE": "/tmp/services.php",
+        "APP_PACKAGES_CACHE": "/tmp/packages.php",
+        "APP_CONFIG_CACHE": "/tmp/config.php",
+        "APP_ROUTES_CACHE": "/tmp/routes.php"
+    },
+    "buildCommand": "composer install --ignore-platform-reqs --no-dev && npm ci && npm run build",
+    "outputDirectory": "public"
+}
