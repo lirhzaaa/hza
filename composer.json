@@ -3,17 +3,12 @@
     "name": "laravel/laravel",
     "type": "project",
     "require": {
-        "php": "7.4.*",
+        "php": "^8.0",
         "laravel/framework": "^10.10"
     },
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "platform": {
-            "php": "7.4.0",
-            "ext-openssl": "1.0.0"
-        },
-        "allow-plugins": true,
         "platform-check": false
     },
     "minimum-stability": "stable",

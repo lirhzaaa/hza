@@ -8,3 +8,4 @@
 .vscode
 README.md
 /storage/*.key
+/public/storage

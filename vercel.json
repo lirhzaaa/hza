@@ -3,15 +3,7 @@
     "builds": [
         {
             "src": "/api/index.php",
-            "use": "@vercel/php@0.1",
-            "config": {
-                "runtime": "7.4",
-                "maxLambdaSize": "50mb",
-                "php.ini": {
-                    "extension_dir": "/tmp",
-                    "extension": ["openssl", "mbstring", "pdo", "pdo_mysql"]
-                }
-            }
+            "use": "vercel-php@0.5.2"
         },
         {
             "src": "public/**",
@@ -44,6 +36,6 @@
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_ROUTES_CACHE": "/tmp/routes.php"
     },
-    "buildCommand": "php -v && composer install --no-dev --prefer-dist --optimize-autoloader --no-interaction",
+    "buildCommand": "composer install --no-dev --prefer-dist --optimize-autoloader --no-interaction",
     "outputDirectory": "public"
 }
