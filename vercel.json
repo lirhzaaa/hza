@@ -2,28 +2,14 @@
     "version": 2,
     "builds": [
         {
-            "src": "/api/index.php",
-            "use": "vercel-php@0.6.0",
-            "config": {
-                "includeFiles": [
-                    "/usr/lib64/libssl.so.10",
-                    "/usr/lib64/libcrypto.so.10"
-                ]
-            }
-        },
-        {
-            "src": "public/**",
-            "use": "@vercel/static"
+            "src": "Dockerfile",
+            "use": "@vercel/docker"
         }
     ],
     "routes": [
         {
-            "src": "/(css|js|images|fonts|assets)/(.*)",
-            "dest": "/public/$1/$2"
-        },
-        {
             "src": "/(.*)",
-            "dest": "/api/index.php"
+            "dest": "/index.php"
         }
     ],
     "env": {
@@ -41,7 +27,5 @@
         "APP_PACKAGES_CACHE": "/tmp/packages.php",
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_ROUTES_CACHE": "/tmp/routes.php"
-    },
-    "buildCommand": "composer install --no-dev --prefer-dist --optimize-autoloader --no-interaction",
-    "outputDirectory": "public"
+    }
 }
