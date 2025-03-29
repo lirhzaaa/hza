@@ -3,26 +3,22 @@
     "name": "laravel/laravel",
     "type": "project",
     "require": {
-        "php": "^7.2.5",
+        "php": ">=7.0",
         "laravel/framework": "^8.0"
     },
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
-        ],
-        "postinstall": "prisma generate && npm run build"
+        ]
     },
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
         "platform": {
-            "php": "7.2.5"
+            "php": "7.0"
         },
-        "platform-check": false,
-        "allow-plugins": {
-            "composer/package-versions-deprecated": true
-        }
+        "platform-check": false
     },
     "minimum-stability": "stable",
     "prefer-stable": true

@@ -1,12 +1,6 @@
-/vendor
-/node_modules
 .env
-.env.*
 .git
-.gitignore
-.gitattributes
 .idea
 .vscode
-README.md
+/node_modules
 /storage/*.key
-/public/storage
