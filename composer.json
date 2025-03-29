@@ -10,7 +10,8 @@
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
-        ]
+        ],
+        "postinstall": "prisma generate && npm run build"
     },
     "config": {
         "optimize-autoloader": true,
